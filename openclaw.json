@@ -16,10 +16,10 @@
         "openrouter/auto": {
           "alias": "OpenRouter"
         },
-        "openrouter/anthropic/claude-sonnet-4": {}
+        "openrouter/xiaomi/mimo-v2-flash": {}
       },
       "model": {
-        "primary": "openrouter/anthropic/claude-sonnet-4"
+        "primary": "openrouter/xiaomi/mimo-v2-flash"
       }
     }
   },
