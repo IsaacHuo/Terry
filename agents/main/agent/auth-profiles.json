@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "profiles": {
+    "openrouter:default": {
+      "type": "api_key",
+      "provider": "openrouter",
+      "key": "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"
+    }
+  }
+}

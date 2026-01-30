@@ -1,0 +1,4 @@
+*.bak
+agents/*/sessions/
+update-check.json
+.DS_Store
