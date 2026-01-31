@@ -1,40 +1,13 @@
 {
-  "messages": {
-    "ackReactionScope": "group-mentions"
+  "meta": {
+    "lastTouchedVersion": "2026.1.29",
+    "lastTouchedAt": "2026-01-31T07:10:13.737Z"
   },
-  "agents": {
-    "defaults": {
-      "maxConcurrent": 4,
-      "subagents": {
-        "maxConcurrent": 8
-      },
-      "compaction": {
-        "mode": "safeguard"
-      },
-      "workspace": "/root/.openclaw/workspace",
-      "models": {
-        "openrouter/auto": {
-          "alias": "OpenRouter"
-        },
-        "openrouter/xiaomi/mimo-v2-flash": {}
-      },
-      "model": {
-        "primary": "openrouter/xiaomi/mimo-v2-flash"
-      }
-    }
-  },
-  "gateway": {
-    "mode": "local",
-    "auth": {
-      "mode": "token",
-      "token": "a62821f77eda25825ab11265313c4b039ffbaecdb91d2f68"
-    },
-    "port": 18789,
-    "bind": "loopback",
-    "tailscale": {
-      "mode": "off",
-      "resetOnExit": false
-    }
+  "wizard": {
+    "lastRunAt": "2026-01-30T13:02:41.599Z",
+    "lastRunVersion": "2026.1.29",
+    "lastRunCommand": "onboard",
+    "lastRunMode": "local"
   },
   "auth": {
     "profiles": {
@@ -44,17 +17,63 @@
       }
     }
   },
-  "plugins": {
-    "entries": {
-      "telegram": {
-        "enabled": true
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "openrouter/xiaomi/mimo-v2-flash"
+      },
+      "models": {
+        "openrouter/xiaomi/mimo-v2-flash": {}
+      },
+      "workspace": "/root/.openclaw/workspace",
+      "cliBackends": {
+        "mcp": {
+          "command": "npx",
+          "args": [
+            "-y",
+            "@modelcontextprotocol/server-filesystem",
+            "/root/.openclaw/workspace"
+          ],
+          "output": "json",
+          "input": "stdin"
+        }
+      },
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
       }
     }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto"
   },
   "channels": {
     "telegram": {
       "enabled": true,
-      "botToken": "8578099923:AAHyl-UwCrJN_ppXMp-ojmU3SdNKXnkPkMs"
+      "dmPolicy": "pairing",
+      "botToken": "8578099923:AAHyl-UwCrJN_ppXMp-ojmU3SdNKXnkPkMs",
+      "groupPolicy": "allowlist",
+      "streamMode": "partial"
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "auth": {
+      "mode": "token",
+      "token": "a62821f77eda25825ab11265313c4b039ffbaecdb91d2f68"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
     }
   },
   "skills": {
@@ -62,14 +81,11 @@
       "nodeManager": "npm"
     }
   },
-  "wizard": {
-    "lastRunAt": "2026-01-30T13:02:41.599Z",
-    "lastRunVersion": "2026.1.29",
-    "lastRunCommand": "onboard",
-    "lastRunMode": "local"
-  },
-  "meta": {
-    "lastTouchedVersion": "2026.1.29",
-    "lastTouchedAt": "2026-01-30T13:02:41.618Z"
+  "plugins": {
+    "entries": {
+      "telegram": {
+        "enabled": true
+      }
+    }
   }
 }
